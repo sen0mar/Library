@@ -1,16 +1,16 @@
 let bookLibrary = [];
 
-const addBookBtn = document.getElementById('add-book-btn');
+const addBookBtn = document.getElementById('add-book-btn');  // Displays form for filling book's info
 addBookBtn.addEventListener('click', function(){
     const bookForm = document.querySelector('.book-form');
     bookForm.style.display = 'block';
 });
 
-const addBook = document.getElementById('submit-button');
+const addBook = document.getElementById('submit-button');  // Adds new book to library
 addBook.addEventListener('click', function(e) {
     e.preventDefault();
-    addBookToLibrary();
-    console.log(bookLibrary);
+    const newBook = addBookToLibrary();
+    addBookToCard();
 });
 
 
@@ -30,8 +30,25 @@ function addBookToLibrary() {
     const read = document.getElementById('read').value;
 
     const newBook = new Book(title, author, pages, read);
-        bookLibrary.push(newBook);
+    bookLibrary.push(newBook);
+    return newBook;
 
+};
+
+function addBookToCard() {
+    const card = document.getElementById('card');
+
+    
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <p><strong>Title: <strong> ${Book.title}</p>
+        <p><strong>Author: <strong> ${Book.author}</p>
+        <p><strong>Pages: <strong> ${Book.pages}</p>
+        <p><strong>Read: <strong> ${Book.read ? "Yes" : "No"}</p>
+        <p>-------------</P>
+    `;
+    div.classList.add('card-container');
+    card.appendChild(div);
 };
 
 
