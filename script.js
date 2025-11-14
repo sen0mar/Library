@@ -41,11 +41,17 @@ function addBookToCard(book) {
     
     const div = document.createElement('div');
     div.innerHTML = `
-        <p><strong>Title:<strong> ${book.title}</p>
-        <p><strong>Author:<strong> ${book.author}</p>
-        <p><strong>Pages:<strong> ${book.pages}</p>
-        <p><strong>Read:<strong> ${book.read ? "Yes" : "No"}</p>
-        <p>-------------</P>
+        <p><strong>Title:</strong> ${book.title}</p>
+        <p><strong>Author:</strong> ${book.author}</p>
+        <p><strong>Pages:</strong> ${book.pages}</p>
+        <p><strong>Read:</strong> ${book.read ? "Yes" : "No"}</p>
+
+        <div class='buttons'>
+            <label>
+                <input type='checkbox'> Read
+            </label>
+            <button>Remove</button>
+        </div>
     `;
     div.classList.add('card-container');
     card.appendChild(div);
