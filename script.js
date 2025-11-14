@@ -10,7 +10,7 @@ const addBook = document.getElementById('submit-button');  // Adds new book to l
 addBook.addEventListener('click', function(e) {
     e.preventDefault();
     const newBook = addBookToLibrary();
-    addBookToCard();
+    addBookToCard(newBook);
 });
 
 
@@ -35,16 +35,16 @@ function addBookToLibrary() {
 
 };
 
-function addBookToCard() {
+function addBookToCard(book) {
     const card = document.getElementById('card');
 
     
     const div = document.createElement('div');
     div.innerHTML = `
-        <p><strong>Title: <strong> ${Book.title}</p>
-        <p><strong>Author: <strong> ${Book.author}</p>
-        <p><strong>Pages: <strong> ${Book.pages}</p>
-        <p><strong>Read: <strong> ${Book.read ? "Yes" : "No"}</p>
+        <p><strong>Title:<strong> ${book.title}</p>
+        <p><strong>Author:<strong> ${book.author}</p>
+        <p><strong>Pages:<strong> ${book.pages}</p>
+        <p><strong>Read:<strong> ${book.read ? "Yes" : "No"}</p>
         <p>-------------</P>
     `;
     div.classList.add('card-container');
