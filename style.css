@@ -12,7 +12,7 @@ body{
     align-items: center;
 }
 
-/* ADD BOOK BUTTON */
+/* ---------- ADD BOOK BUTTON ---------- */
 #add-book-btn {
     padding: 1rem;
     border: none;
@@ -29,7 +29,8 @@ body{
     background-color: rgb(41, 105, 223);
 }
 
-/* FORM */
+/* ---------- FORM ---------- */
+/* BOOK FORM */
 .book-form {
     display: flex;
     justify-content: center;
@@ -58,6 +59,7 @@ body{
     border: none;
 }
 
+/* SUBMIT BUTTON */
 form #submit-button {
     background-color: rgba(10, 1, 1, 0.192);
     border: none;
@@ -67,6 +69,15 @@ form #submit-button {
     padding: 0.5rem 1rem;
     font-weight: bold;
     font-size: 1.1rem;
+}
+
+form #submit-button:hover {
+    background-color: rgba(10, 1, 1, 0.192);
+    box-shadow: 2px 2px 2px black;
+}
+
+button:active {
+    transform: scale(0.95);
 }
 
 form div {
